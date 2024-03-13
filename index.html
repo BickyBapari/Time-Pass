@@ -4,78 +4,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Selectors</title>
+    <title>Loader</title>
+    <style>
+        body {
+            background-color: #8100cc;
+        }
+
+        #loader {
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px -50px;
+        }
+
+        #loader div {
+            width: 20px;
+            height: 20px;
+            background-color: #FFF;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        #d1 {
+            animation: animate 2s linear infinite;
+        }
+
+        #d2 {
+            animation: animate 2s linear infinite -.4s;
+        }
+
+        #d3 {
+            animation: animate 2s linear infinite -.8s;
+        }
+
+        #d4 {
+            animation: animate 2s linear infinite -1.2s;
+        }
+
+        #d5 {
+            animation: animate 2s linear infinite -1.6s;
+        }
+
+        @keyframes animate {
+            0% {
+                left: 100px;
+                top: 0;
+            }
+
+            80% {
+                left: 0;
+                top: 0;
+            }
+
+            85% {
+                left: 0;
+                top: -20px;
+                width: 20px;
+                height: 20px;
+            }
+
+            90% {
+                width: 40px;
+                height: 15px;
+            }
+
+            95% {
+                left: 100px;
+                top: -20px;
+                width: 20px;
+                height: 20px;
+            }
+
+            100% {
+                left: 100px;
+                top: 0;
+            }
+        }
+    </style>
 </head>
-<style>
-    /* Element Selectors */
-    div {
-        /* background-color: red; */
-    }
-
-    /* Class Selectors */
-    .red {
-        background-color: red;
-    }
-
-    /* ID Selectors */
-    #green {
-        background-color: green;
-    }
-
-    /* Child Selector */
-    div>p {
-        color: blue;
-        background-color: brown;
-    }
-
-    /* Decendent Selector */
-    div p {
-        color: blue;
-        background-color: brown;
-    }
-
-    /* Universal Selector */
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    /* Pseudo Selector */
-    a:visited {
-        color: yellow;
-    }
-
-    a {
-        color: green;
-    }
-    a:active{
-        background-color: red;
-    }
-    a:hover{
-        background-color: yellow;
-    }
-    p:first-child{
-        background-color: aqua;
-    }
-</style>
 
 <body>
-    <main class="one">
-        <p>I am first</p>
-        <p>I am second</p>
-    </main>
-    <div class="red">
-        I am a div
-        <article>
-            <p>
-                I am a para inside div
-            </p>
-        </article>
+    <div id="loader">
+        <div id="d1"></div>
+        <div id="d2"></div>
+        <div id="d3"></div>
+        <div id="d4"></div>
+        <div id="d5"></div>
     </div>
-    <div id="green">
-        I am another div
-    </div>
-    <a href="https://www.google.com">Go to Google</a>
 </body>
 
 </html>
